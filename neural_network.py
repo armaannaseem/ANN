@@ -33,3 +33,10 @@ class NeuralNetwork:
         self.b1 = self.b1 - learning_rate * self.db1
         self.W2 = self.W2 - learning_rate * self.dW2
         self.b2 = self.b2 - learning_rate * self.db2
+
+    def copy_weights(self, other_nn):
+        # Used for the DQN Target Network
+        self.W1 = other_nn.W1.copy()
+        self.b1 = other_nn.b1.copy()
+        self.W2 = other_nn.W2.copy()
+        self.b2 = other_nn.b2.copy()
